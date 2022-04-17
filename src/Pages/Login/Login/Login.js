@@ -1,14 +1,17 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
+    const location = useLocation();
 
+    let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
@@ -19,7 +22,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true });
     }
 
 
@@ -56,6 +59,7 @@ const Login = () => {
             </Form>
 
             <p className='mt-3'>New to the website? <Link to="/register" className='text-success pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <GoogleLogin></GoogleLogin>
         </div>
     );
 };
