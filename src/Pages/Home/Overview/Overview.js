@@ -14,7 +14,7 @@ const Overview = () => {
                         </p>
 
                         <button
-                            type="button" class="btn btn-success"><i class="fas fa-shopping-cart"></i> See today</button>
+                            type="button" className="btn btn-success"> See today</button>
                     </div>
                     <div className="col-12 col-md-12 col-lg-6">
                         <img className='img-fluid' src={view} alt="" />

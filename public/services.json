@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Bird Photos",
+        "price": "300",
+        "description": "See Different Species of birds that I have captured through my lens.",
+        "img": "https://cdn.pixabay.com/photo/2012/06/19/10/32/owl-50267_960_720.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Lion Photos",
+        "price": "120",
+        "description": "See Photos of Lions that I have captured through my lens.",
+        "img": "https://cdn.pixabay.com/photo/2019/04/06/05/17/wallpaper-4106667_960_720.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Snake Photos",
+        "price": "180",
+        "description": "See Photos of different types of Snakes that I have captured through my lens.",
+        "img": "https://cdn.pixabay.com/photo/2019/02/06/17/09/snake-3979601_960_720.jpg"
+    }
+    
+]
