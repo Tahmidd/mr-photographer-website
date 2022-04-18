@@ -56,7 +56,7 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <br />
-                    <input className='w-75' type="text" name="name" id="" placeholder='Your Name' />
+                    <input className='w-75 ' type="text" name="name" id="" placeholder='Your Name' />
 
                 </Form.Group>
 

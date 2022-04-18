@@ -13,8 +13,9 @@ const Header = () => {
         signOut(auth);
     }
     return (
-        <>
-            <Navbar collapseOnSelect expand="lg" sticky='top' bg="secondary" variant="dark">
+
+        <div className='d-flex  justify-content-center bg-success'>
+            <Navbar collapseOnSelect expand="lg" sticky='top' variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <img height={40} src={logo} alt="" />
@@ -24,20 +25,21 @@ const Header = () => {
                         <Nav className='me-auto'>
                             <Nav.Link href="home#services" className='text-white'>Services</Nav.Link>
                             <Nav.Link as={Link} to="about" className='text-white'>About</Nav.Link>
-                        </Nav>
-                        <Nav >
+                            <Nav.Link as={Link} to="blogs" className='text-white'>Blogs</Nav.Link>
                             {
                                 user ?
                                     <button className='btn btn-link text-white text-decoration-none' onClick={handleSignOut}>sign out</button>
                                     :
-                                    <Nav.Link as={Link} to="login">
+                                    <Nav.Link className='text-white' as={Link} to="login">
                                         Login
                                     </Nav.Link>}
                         </Nav>
+
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-        </>
+        </div>
+
     );
 };
 
