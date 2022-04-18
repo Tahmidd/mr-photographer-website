@@ -11,6 +11,7 @@ const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const location = useLocation();
+    let errorElement;
 
     let from = location.state?.from?.pathname || "/";
     const [
@@ -24,6 +25,10 @@ const Login = () => {
 
     if (loading) {
         return <Loading></Loading>
+    }
+
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     if (user) {
@@ -57,6 +62,8 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
+
+                {errorElement}
 
                 <Button variant="success" type="submit">
                     Login

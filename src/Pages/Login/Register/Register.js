@@ -8,6 +8,7 @@ import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Register = () => {
     const [agree, setAgree] = useState(false);
+    let errorElement;
 
     const [
         createUserWithEmailAndPassword,
@@ -23,6 +24,10 @@ const Register = () => {
 
     if (loading) {
         return <Loading></Loading>
+    }
+
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
     }
 
     if (user) {
@@ -65,6 +70,7 @@ const Register = () => {
 
                 <label className={`ps-2 ${agree ? '' : 'text-danger'}`} htmlFor="terms">Accept Terms and Conditions</label>
                 <br />
+                {errorElement}
                 <input
                     disabled={!agree}
                     className='w-50 mx-auto btn btn-primary mt-2 bg-success'
