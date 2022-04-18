@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import GoogleLogin from '../GoogleLogin/GoogleLogin';
 
 const Register = () => {
@@ -18,6 +19,10 @@ const Register = () => {
 
     const navigateLogin = event => {
         navigate('/login');
+    }
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     if (user) {
